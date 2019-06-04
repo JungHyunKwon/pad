@@ -7,6 +7,16 @@ try {
 		'use strict';
 
 		/**
+		 * @name 숫자 확인
+		 * @since 2017-12-06
+		 * @param {*} value
+		 * @return {boolean}
+		 */
+		function _isNumeric(value) {
+			return typeof value === 'number' && !isNaN(value) && isFinite(value);
+		}
+
+		/**
 		 * @name pad
 		 * @param {number} value
 		 * @return {number}
@@ -15,8 +25,8 @@ try {
 		window.pad = function(value) {
 			var result = NaN;
 			
-			//NaN이 아닐 때
-			if(typeof value === 'number' && !isNaN(value)) {
+			//숫자이면서 0초과이면서 10미만일 때
+			if(_isNumeric(value)) {
 				//0초과이면서 10미만일 때
 				if(value > 0 && 10 > value) {
 					result = '0' + value;	
