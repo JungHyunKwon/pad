@@ -19,7 +19,7 @@ try {
 		/**
 		 * @name pad
 		 * @param {number} value
-		 * @return {number}
+		 * @return {number || string}
 		 * @since 2018-07-13
 		 */
 		window.pad = function(value) {
